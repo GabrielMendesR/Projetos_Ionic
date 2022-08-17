@@ -19,10 +19,10 @@
           <ion-item *ngFor = "let elemento_da_lista of variavel_lista; index as i">
             <ion-grid>
               <ion-row>
-                <ion-col id="elemento_da_lista" size="9">
+                <ion-col size="9">
                   {{elemento_da_lista}}
                 </ion-col>
-                <ion-col id="posicao_lixeira" size="3">
+                <ion-col size="3">
                   <ion-button color="danger" size="small" (click)="remove(i)">
                     <ion-icon name="trash-outline"></ion-icon>
                   </ion-button>
