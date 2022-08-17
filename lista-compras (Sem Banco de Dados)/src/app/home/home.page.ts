@@ -28,13 +28,11 @@ export class HomePage {
    
   }
 
+  remove(indice) {
+    this.variavel_lista.splice(indice, 1)
+  }
+
   //*ngFor = "let elemento_da_lista of minhaLista" no item
   //[(ngModel)]="texto" no input
 
-  remove(indice) {
-    this.variavel_lista.splice(indice, 1)
-
 }
-
-}
-
