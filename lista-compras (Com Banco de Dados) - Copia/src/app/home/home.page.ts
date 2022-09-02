@@ -9,11 +9,11 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class HomePage {
 
-  constructor(private storage:Storage) {
+  constructor(private storage: Storage) {
     this.storage.create();
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.atualizaLista();
   }
 
@@ -26,7 +26,7 @@ export class HomePage {
       //this.variavel_lista.push("0", this.texto);
 
       this.variavel_lista.forEach(item => {
-        if(parseInt(item[0]) > this.aux) {
+        if (parseInt(item[0]) > this.aux) {
           this.aux = parseInt(item[0]);
         }
       })
@@ -36,13 +36,13 @@ export class HomePage {
       this.texto = "";
     }
 
-      /*
-    if (this.texto == "") {
+    /*
+  if (this.texto == "") {
 
-    } else{
-      this.variavel_lista.push(this.texto);
-      this.texto = "";
-    }*/
+  } else{
+    this.variavel_lista.push(this.texto);
+    this.texto = "";
+  }*/
 
   }
 
@@ -53,12 +53,17 @@ export class HomePage {
     })
   }
 
-  remove(indice) {
-    this.variavel_lista.splice(indice, 1)
+  async remove(indice) {
+    //this.variavel_lista.splice(indice, 1)
+    await this.storage.remove(indice)
+    this.atualizaLista();
   }
 
-  //*ngFor = "let elemento_da_lista of minhaLista" no item
-  //[(ngModel)]="texto" no input
 
-}
+
+
+    //*ngFor = "let elemento_da_lista of minhaLista" no item
+    //[(ngModel)]="texto" no input
+
+  }
 
