@@ -19,11 +19,12 @@ export class HomePage {
 
   variavel_lista = [];
   texto: string = "";
-  preco: number = 0;
-  aux = 0;
+  preco: number;
+  aux: number = 0;
+  total: number;
 
   async adiciona() {
-    if (!(this.texto == "" || this.preco == 0)) {
+    if (!(this.texto == "" || this.preco == null)) {
       //this.variavel_lista.push("0", this.texto);
 
       this.variavel_lista.forEach(item => {
@@ -32,10 +33,10 @@ export class HomePage {
         }
       })
       this.aux = this.aux + 1;
-      await this.storage.set(this.aux.toString(), [this.texto, this.preco]);
+      await this.storage.set(this.aux.toString(), [(this.texto), this.preco]);
       this.atualizaLista();
       this.texto = "";
-      this.preco = 0;
+      this.preco = null;
     }
 
     /*
@@ -59,6 +60,7 @@ export class HomePage {
     //this.variavel_lista.splice(indice, 1)
     await this.storage.remove(indice);
     this.atualizaLista();
+
   }
 
   //*ngFor = "let elemento_da_lista of minhaLista" no item

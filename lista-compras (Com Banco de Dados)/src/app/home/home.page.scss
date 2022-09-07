@@ -1,6 +1,19 @@
+.ios {
+  --ion-background-color: rgb(221, 216, 151);
+}
+
+.md {
+  --ion-background-color: rgb(221, 216, 151);
+}
+
+.md {
+  --ion-background-color: rgb(221, 216, 151);
+}
+
 #posicionamento {
   padding-top: 10%;
   padding-left: 10%;
+  
 }
 
 #lixeira {
@@ -13,4 +26,10 @@
   padding-left: 0px;
   padding-top: 10px;
   
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
