@@ -21,7 +21,7 @@ export class HomePage {
   texto: string = "";
   preco: number;
   aux: number = 0;
-  total: number;
+  total = [];
 
   async adiciona() {
     if (!(this.texto == "" || this.preco == null)) {

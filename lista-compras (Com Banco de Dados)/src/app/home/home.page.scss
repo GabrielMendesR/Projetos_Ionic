@@ -6,14 +6,14 @@
   --ion-background-color: rgb(221, 216, 151);
 }
 
-.md {
-  --ion-background-color: rgb(221, 216, 151);
-}
-
 #posicionamento {
   padding-top: 10%;
   padding-left: 10%;
-  
+
+}
+
+#lista{
+  padding-left: 10px;
 }
 
 #lixeira {
@@ -25,5 +25,9 @@
   color: green;
   padding-left: 0px;
   padding-top: 10px;
-  
+
+}
+
+#total {
+  padding-left: 0px;
 }
