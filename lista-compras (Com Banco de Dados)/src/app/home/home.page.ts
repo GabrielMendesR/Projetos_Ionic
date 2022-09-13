@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { $ } from 'protractor';
 
 
 @Component({
@@ -21,9 +22,24 @@ export class HomePage {
   texto: string = "";
   preco: number;
   aux: number = 0;
-  total = [];
+  total: number;
 
   async adiciona() {
+    
+    if (!(this.texto != "" || this.preco == null)) {
+        
+     
+        //$("#swap").on('click',function(){
+        //    var from = $('#prod').val();
+        //    $('#prod').val($('#prec').val());
+        //   $('#prec').val(from);
+    }
+    
+    if ((this.texto == "" || this.preco != null)) {
+
+    }
+
+   
     if (!(this.texto == "" || this.preco == null)) {
       //this.variavel_lista.push("0", this.texto);
 
@@ -53,6 +69,7 @@ export class HomePage {
     this.variavel_lista = [];
     this.storage.forEach((value, key, index) => {
       this.variavel_lista.push([key, value]);
+      this.total = 100.00
     })
   }
 
