@@ -1,17 +1,8 @@
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding" [fullscreen]="true">
   <div>
+    <h3 style="padding-left: 10px; padding-top: 10px; font-family: monospace;">Lista de Compras</h3>
+
     <ion-grid>
-
-      <ion-tabs>
-        <ion-tab>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>R$</ion-title>
-            </ion-toolbar>
-          </ion-header>
-        </ion-tab>
-      </ion-tabs>
-
       <ion-row id="posicionamento">
         <ion-col>
           <ion-item>
@@ -22,13 +13,16 @@
             </ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="3" style="padding-top:0px;">
+
+        <ion-col size="3" style="padding-top: 0px;">
           <ion-button color="primary" size="small" style="height: 100px; width: 60px;" (click)="adiciona()">
             <ion-icon name="cart-outline"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
+
       <ion-row id="lista">
+
         <ion-col>
           <ion-item *ngFor="let elemento_da_lista of variavel_lista">
             <ion-grid>
@@ -40,19 +34,25 @@
                   <ion-icon id="dinheiro" name="cash-outline"></ion-icon> R${{elemento_da_lista[1][1]}}
                 </ion-col>
                 <ion-col>
-                  <ion-button color="danger" size="small" style="width: 50px; height: 30px;"
+                  <ion-button color="danger" size="small" style="width: 50px; height: 30px; padding-right: 0px;"
                     (click)="remove(elemento_da_lista[0])">
-                    <ion-icon style="width: 50px; height: 30px;" name="trash-outline"></ion-icon>
+                    <ion-icon id="lixeira" name="trash-outline"></ion-icon>
                   </ion-button>
                 </ion-col>
               </ion-row>
+
             </ion-grid>
           </ion-item>
         </ion-col>
       </ion-row>
-
-
     </ion-grid>
+
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>Total: R${{total}}</ion-title>
+      </ion-toolbar>
+    </ion-footer>
 
 
   </div>

@@ -22,24 +22,24 @@ export class HomePage {
   texto: string = "";
   preco: number;
   aux: number = 0;
-  total: number;
+  total: number = 0;
 
   async adiciona() {
-    
+
     if (!(this.texto != "" || this.preco == null)) {
-        
-     
-        //$("#swap").on('click',function(){
-        //    var from = $('#prod').val();
-        //    $('#prod').val($('#prec').val());
-        //   $('#prec').val(from);
+
+
+      //$("#swap").on('click',function(){
+      //    var from = $('#prod').val();
+      //    $('#prod').val($('#prec').val());
+      //   $('#prec').val(from);
     }
-    
+
     if ((this.texto == "" || this.preco != null)) {
 
     }
 
-   
+
     if (!(this.texto == "" || this.preco == null)) {
       //this.variavel_lista.push("0", this.texto);
 
@@ -69,15 +69,25 @@ export class HomePage {
     this.variavel_lista = [];
     this.storage.forEach((value, key, index) => {
       this.variavel_lista.push([key, value]);
-      this.total = 100.00
     })
+    this.SomaTotal                // <---------------
   }
 
   async remove(indice) {
     //this.variavel_lista.splice(indice, 1)
     await this.storage.remove(indice);
-    this.atualizaLista();
+    
+    this.atualizaLista();        // <------------------
 
+  }
+
+  SomaTotal() {
+    this.total = this.total + this.preco
+
+  }
+
+  SubtrairTotal() {
+    this.total = this.total - this.preco
   }
 
   //*ngFor = "let elemento_da_lista of minhaLista" no item
