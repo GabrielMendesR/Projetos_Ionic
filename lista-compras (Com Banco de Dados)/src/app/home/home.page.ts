@@ -22,7 +22,7 @@ export class HomePage {
   texto: string = "";
   preco: number;
   aux: number = 0;
-  total: number = 0;
+  total: number;
 
   async adiciona() {
 
@@ -53,6 +53,9 @@ export class HomePage {
       this.atualizaLista();
       this.texto = "";
       this.preco = null;
+      if (this.variavel_lista = []){
+        this.total = 0
+      }
     }
 
     /*
@@ -69,25 +72,17 @@ export class HomePage {
     this.variavel_lista = [];
     this.storage.forEach((value, key, index) => {
       this.variavel_lista.push([key, value]);
+      this.total = this.variavel_lista.reduce((sValue, currValue) => sValue + currValue[1][1], 0)
+    
     })
-    this.SomaTotal                // <---------------
+
   }
 
   async remove(indice) {
     //this.variavel_lista.splice(indice, 1)
     await this.storage.remove(indice);
-    
-    this.atualizaLista();        // <------------------
+    this.atualizaLista();
 
-  }
-
-  SomaTotal() {
-    this.total = this.total + this.preco
-
-  }
-
-  SubtrairTotal() {
-    this.total = this.total - this.preco
   }
 
   //*ngFor = "let elemento_da_lista of minhaLista" no item
