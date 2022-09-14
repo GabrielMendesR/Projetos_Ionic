@@ -2,16 +2,6 @@
   <div>
     <ion-grid>
 
-      <ion-tabs>
-        <ion-tab>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Total: R${{total}}</ion-title>
-            </ion-toolbar>
-          </ion-header>
-        </ion-tab>
-      </ion-tabs>
-
       <ion-row id="posicionamento">
         <ion-col>
           <ion-item>
@@ -28,6 +18,7 @@
           </ion-button>
         </ion-col>
       </ion-row>
+
       <ion-row id="lista">
         <ion-col>
           <ion-item *ngFor="let elemento_da_lista of variavel_lista">
@@ -46,14 +37,19 @@
                   </ion-button>
                 </ion-col>
               </ion-row>
+
             </ion-grid>
           </ion-item>
         </ion-col>
       </ion-row>
 
-
     </ion-grid>
-
-
   </div>
+
+  <div id="total">
+    <h2>Total: R${{total}}</h2>
+  </div>
+
+
+
 </ion-content>

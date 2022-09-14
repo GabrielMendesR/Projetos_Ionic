@@ -12,8 +12,9 @@
 
 }
 
-#lista{
+#lista {
   padding-left: 10px;
+  //overflow-y:   
 }
 
 #lixeira {
@@ -29,6 +30,9 @@
 }
 
 #total {
-  padding-left: 10px;
-  background-color: rgb(221, 216, 151);;
+ position: absolute;
+ z-index: 9999;
+ color: rgb(43, 87, 235);
+ bottom: 0%;
+ right: 10%;
 }
