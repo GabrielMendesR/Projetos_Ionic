@@ -1,18 +1,20 @@
 <ion-content [fullscreen]="true">
+
+
   <div>
     <ion-grid>
 
       <ion-row id="posicionamento">
         <ion-col>
           <ion-item>
-            <ion-input id="prod" placeholder="Produto" [(ngModel)]="texto" (keyup.enter)="adiciona()"></ion-input>
+            <ion-input placeholder="Produto" [(ngModel)]="texto" (keyup.enter)="adiciona()"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input id="prec" placeholder="Preço" type="number" [(ngModel)]="preco" (keyup.enter)="adiciona()">
+            <ion-input placeholder="Preço" type="number" [(ngModel)]="preco" (keyup.enter)="adiciona()">
             </ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="3" style="padding-top:0px;">
+        <ion-col size="3" style="padding-top: 0px;">
           <ion-button color="primary" size="small" style="height: 100px; width: 60px;" (click)="adiciona()">
             <ion-icon name="cart-outline"></ion-icon>
           </ion-button>
@@ -21,7 +23,7 @@
 
       <ion-row id="lista">
         <ion-col>
-          <ion-item *ngFor="let elemento_da_lista of variavel_lista">
+          <ion-item class="ion-item" *ngFor="let elemento_da_lista of variavel_lista">
             <ion-grid>
               <ion-row>
                 <ion-col size="10" class="ion-text-capitalize">
@@ -31,7 +33,7 @@
                   <ion-icon id="dinheiro" name="cash-outline"></ion-icon> R${{elemento_da_lista[1][1]}}
                 </ion-col>
                 <ion-col>
-                  <ion-button color="danger" size="small" style="width: 50px; height: 30px;"
+                  <ion-button color="danger" style="width: 50px; height: 30px;"
                     (click)="remove(elemento_da_lista[0])">
                     <ion-icon style="width: 50px; height: 30px;" name="trash-outline"></ion-icon>
                   </ion-button>
@@ -46,10 +48,10 @@
     </ion-grid>
   </div>
 
-  <div id="total">
+  <ion-toolbar id="total">
+  <div style="background-color: rgb(221, 216, 151)">
     <h2>Total: R${{total}}</h2>
   </div>
-
-
+</ion-toolbar>
 
 </ion-content>

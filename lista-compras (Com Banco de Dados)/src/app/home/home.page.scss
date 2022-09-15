@@ -6,19 +6,16 @@
   --ion-background-color: rgb(221, 216, 151);
 }
 
+
 #posicionamento {
+  padding: 5%;
   padding-top: 10%;
-  padding-left: 10%;
-
+  
 }
 
-#lista {
-  padding-left: 10px;
-  //overflow-y:   
-}
 
 #lixeira {
-  padding-right: 0px;
+  right: 10px;
 
 }
 
@@ -30,9 +27,8 @@
 }
 
 #total {
- position: absolute;
- z-index: 9999;
- color: rgb(43, 87, 235);
- bottom: 0%;
- right: 10%;
+  background:rgb(221, 216, 151);
+  color: rgb(43, 87, 235);
+  bottom: 0%;
+  right: 0%;
 }
