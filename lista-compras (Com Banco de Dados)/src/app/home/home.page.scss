@@ -6,6 +6,13 @@
   --ion-background-color: rgb(221, 216, 151);
 }
 
+
+.cont2 {
+  max-height: 9%;
+  bottom: 0%;
+
+}
+
 #posicionamento {
   padding-top: 10%;
   padding-left: 10%;
@@ -13,26 +20,18 @@
 }
 
 #lista {
-  padding-left: 10px;
-  //overflow-y:   
-}
-
-#lixeira {
-  padding-right: 0px;
-
+  padding-left: 6%;
+  
 }
 
 #dinheiro {
   color: green;
-  padding-left: 0px;
-  padding-top: 10px;
+  padding-left: 10%;
+  padding-top: 15px;
 
 }
 
 #total {
- position: absolute;
- z-index: 9999;
- color: rgb(43, 87, 235);
- bottom: 0%;
- right: 10%;
+  color: rgb(43, 87, 235);
+  padding-right: 0%;
 }
