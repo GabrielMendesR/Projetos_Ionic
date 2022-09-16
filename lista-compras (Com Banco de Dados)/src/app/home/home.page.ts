@@ -26,22 +26,23 @@ export class HomePage {
 
   async adiciona() {
 
+    /*   Trocar para Produto ou para Preço
     if (!(this.texto != "" || this.preco == null)) {
+ 
+       $("#swap").on('click',function(){
+           var from = $('#prod').val();
+           $('#prod').val($('#prec').val());
+          $('#prec').val(from);
+     
+     }
+ 
+     if ((this.texto == "" || this.preco != null)) {
+ 
+     }
+   */
 
+    if (!(this.texto == "" || this.preco == null || this.preco == 0)) {
 
-      //$("#swap").on('click',function(){
-      //    var from = $('#prod').val();
-      //    $('#prod').val($('#prec').val());
-      //   $('#prec').val(from);
-    }
-
-    if ((this.texto == "" || this.preco != null)) {
-
-    }
-
-
-    if (!(this.texto == "" || this.preco == null)) {
-      //this.variavel_lista.push("0", this.texto);
 
       this.variavel_lista.forEach(item => {
         if (parseInt(item[0]) > this.aux) {
@@ -53,39 +54,30 @@ export class HomePage {
       this.atualizaLista();
       this.texto = "";
       this.preco = null;
-      if (this.variavel_lista = []){
-        this.total = 0
-      }
+      this.total = 0
+
     }
 
-    /*
-  if (this.texto == "") {
-
-  } else{
-    this.variavel_lista.push(this.texto);
-    this.texto = "";
-  }*/
 
   }
 
   atualizaLista() {
+
     this.variavel_lista = [];
     this.storage.forEach((value, key, index) => {
       this.variavel_lista.push([key, value]);
       this.total = this.variavel_lista.reduce((sValue, currValue) => sValue + currValue[1][1], 0)
-    
     })
+    if (this.variavel_lista.length == 0) {
+      this.total = 0
+    }
 
   }
 
   async remove(indice) {
-    //this.variavel_lista.splice(indice, 1)
     await this.storage.remove(indice);
     this.atualizaLista();
 
   }
-
-  //*ngFor = "let elemento_da_lista of minhaLista" no item
-  //[(ngModel)]="texto" no input
 
 }
